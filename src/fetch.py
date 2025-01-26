@@ -5,7 +5,7 @@ from consts import BASE_URL, HS_DICT
 
 
 
-def get_highscores_user(username: str): 
+def get_highscores_user(username: str) -> dict: 
     user_request = BASE_URL.format(username=username)
     
     try:
