@@ -1,23 +1,23 @@
 import requests
 import logging
 from requests import Response
-from consts import BASE_URL, HS_DICT
+from consts import *
 
 
 
 def get_highscores_user(username: str) -> dict: 
-    user_request = BASE_URL.format(username=username)
+    user_request = BASE_REG_HS_URL.format(username=username)
     
     try:
         response = requests.get(user_request, timeout=15)
         response.raise_for_status()
-        user_data = format_highscore_response(response)
+        user_data = _format_highscore_response(response)
     except Exception as err:
         return print(err)
     return user_data
 
 
-def format_highscore_response(response: Response) -> dict:
+def _format_highscore_response(response: Response) -> dict:
     highscore_data = response.text.strip().split("\n")
     
     highscore_dict = {}
@@ -37,3 +37,4 @@ def format_highscore_response(response: Response) -> dict:
             highscore_dict[HS_DICT[idx]] = None
 
     return highscore_dict
+

@@ -1,4 +1,6 @@
-BASE_URL = "https://secure.runescape.com/m=hiscore/index_lite.ws?player={username}"
+BASE_REG_HS_URL = "https://secure.runescape.com/m=hiscore/index_lite.ws?player={username}"
+BASE_IM_HS_URL = "https://secure.runescape.com/m=hiscore_ironman/index_lite.ws?player={username}"
+BASE_RHCIM_HS_URL = "https://secure.runescape.com/m=hiscore_hardcore_ironman/index_lite.ws?player={username}"
 
 HS_DICT= {
     0: "Overall",
